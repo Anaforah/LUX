@@ -1,0 +1,16 @@
+{
+    "Fácil": {
+      "texto1": "sequência fibonacci<br>Senha:<br>1-1-2-3-5-8-13-21",
+      "texto2": "Ordene as letras que faltam<br>Leonardo da Vinci, moan lias",
+      "resposta": "mona lisa",
+      "pista": "1 1 2 3 5 8 13 21"
+    },
+    
+    "Difícil": {
+      "texto1": "13-3-2-21-1-1-8-5",
+      "texto2": "O Draconian devil <br>Oh lame saint",
+      "resposta": "Leonardo da Vinci mona lisa",
+      "pista": "13 3 2 21 1 1 8 5"
+    }
+  }
+  
