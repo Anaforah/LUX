@@ -13,6 +13,7 @@ import { finalscene } from '/finalscene.js';
 import { gameover } from '/gameover.js';
 import { config } from '/config.js';
 import { showTutorialHint } from '/tutorial.js';
+import { preloadassets } from '/preloadassets.js';
 
 let botaoElementfluer; // <-- só declarando, sem criar ainda
 let botaoElementfibonacci; // agora é global
@@ -44,6 +45,8 @@ function cancelAllTimeouts() {
         }
     });
 }
+
+preloadassets();
 
 startPhrases().then(() => {
     setArrayGuide("0", selectedDifficulty);
