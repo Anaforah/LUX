@@ -15,21 +15,26 @@ export function buttonmenu(newFuncoes = [], newBotoes = []) {
   botoes.push(...newBotoes); // Adiciona botões ao array global
   funcoes.push(...newFuncoes); // Adiciona funções ao array global
   // Limpa o menu antes de recriar
-  menuContainer.innerHTML = '';
+  const fragment = document.createDocumentFragment();
 
-  // Recria todos os botões
-  funcoes.forEach((funcao, i) => {
-    const botao = botoes[i];
-    if (botao) {
-      menuContainer.appendChild(botao);
-      funcao(botao); 
+  // Adiciona TODOS os botões ao fragmento
+  botoes.forEach(botao => {
+    if (botao && !menuContainer.contains(botao)) {
+      fragment.appendChild(botao);
     }
   });
 
   document.body.appendChild(menuContainer);
-  return menuContainer;
-}
 
+menuContainer.appendChild(fragment);
+newBotoes.forEach((botao, i) => {
+  if (botao && newFuncoes[i]) {
+    newFuncoes[i](botao);
+  }
+});
+
+return menuContainer;
+}
 
 // ✅ Função light com overlay azul incluso
 export function light(buttonElement, imageElement = null) {
